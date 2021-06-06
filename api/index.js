@@ -27,6 +27,23 @@ bot.onText(/\/menu/, (msg) => {
         `this is your main menu`
     );   
 });
+state = 0
+bot.onText(/\/predict/, (msg) => { 
+    console.log(msg)
+    bot.sendMessage(
+        msg.chat.id,
+        `Masukan nilai i|v contohnya 9|9`
+    );   
+    state = 1
+});
+bot.on('message', (msg) => {
+    if(state == 1){
+        console.log(msg.text);
+    }
+    else{
+        state = 0
+    }
+})
 
 // routers
 r.get('/prediction/:i/:r', function(req, res, next) {    
