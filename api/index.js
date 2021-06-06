@@ -29,7 +29,6 @@ bot.onText(/\/menu/, (msg) => {
 });
 state = 0
 bot.onText(/\/predict/, (msg) => { 
-    console.log(msg)
     bot.sendMessage(
         msg.chat.id,
         `Masukan nilai i|v contohnya 9|9`
