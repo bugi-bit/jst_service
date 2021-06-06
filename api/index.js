@@ -33,7 +33,7 @@ bot.on('message', (msg) => {
     if(state == 1){
         s = msg.text.split("|")
         i = parseFloat(s[0])
-        v = parseFloat(s[1])
+        r = parseFloat(s[1])
         model.predict(
         [
            i, // string to float
