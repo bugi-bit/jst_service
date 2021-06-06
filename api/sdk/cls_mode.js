@@ -22,7 +22,7 @@ function ArgMax(res){
     
     if(argMax(cls_data) == 1){
       label = "OVER VOLTAGE"
-    }if(argMax(cls_data) == 2){
+    }if(argMax(cls_data) == 0){
       label = "DROP VOLTAGE"
     }
   return label
