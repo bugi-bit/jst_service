@@ -16,7 +16,7 @@ function ArgMax(res){
     label = "NORMAL"
     cls_data = []
     for(i=0; i<res.lenght; i++){
-        cls_data[i]
+        cls_data[i] = res[i]
     }
     console.log(cls_data, argMax(cls_data));
     
