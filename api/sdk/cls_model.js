@@ -26,7 +26,7 @@ function ArgMax(res){
     for(i=0; i<res.lenght; i++){
         cls_data[i] = res[i]
     }
-    console.log(cls_data, argMax(cls_data));
+//     console.log(cls_data, argMax(cls_data));
     
     if(argMax(cls_data) == 1){
       label = "OVER VOLTAGE"
