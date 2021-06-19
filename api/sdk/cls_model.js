@@ -1,4 +1,3 @@
-
 const tf = require('@tensorflow/tfjs-node');
 
 function normalized(data){ // i & r
@@ -25,6 +24,7 @@ function ArgMax(res){
     }if(argMax(cls_data) == 0){
       label = "DROP VOLTAGE"
     }
+    console.log(cls_data, argMax(cls_data));
   return label
 }
 
