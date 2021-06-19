@@ -40,17 +40,16 @@ bot.on('message', (msg) => {
             r
         ]
         ).then((jres1)=>{
-            v = parseFloat(jres1[0])
-            p = parseFloat(jres1[1])
-
-              cls_model.classify([i, r, v, p]).then((jres2) => {
+            console.log(jres1);
+          
+              cls_model.classify([i, r, parseFloat(jres1[0]),parseFloat(jres1[1])]).then((jres2) => {
                 bot.sendMessage(
                     msg.chat.id,
-                    `nilai V yang diprediksi adalah ${v} volt`
+                    `nilai V yang diprediksi adalah ${jres1[0]} volt`
         ); 
                 bot.sendMessage(
                     msg.chat.id,
-                    `nilai P yang diprediksi adalah ${p} watt`
+                    `nilai P yang diprediksi adalah ${jres1[1]} watt`
         );
                  bot.sendMessage(
                     msg.chat.id,
