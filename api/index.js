@@ -13,8 +13,7 @@ const bot = new TelegramBot(token, {polling: true});
 state = 0;
 // bots
 bot.onText(/\/start/, (msg) => { 
-    console.log(msg)
-    bot.sendMessage(
+       bot.sendMessage(
         msg.chat.id,
         `hello ${msg.chat.first_name}, welcome...\n
         click /predict`
@@ -39,23 +38,11 @@ bot.on('message', (msg) => {
         [
             i,
             r
-//            parseFloat(s[0]), // string to float
-//            parseFloat(s[1])
         ]
         ).then((jres1)=>{
-//           console.log(jres1);
             v = parseFloat(jres1[0])
             p = parseFloat(jres1[1])
-            
-//             cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), parseFloat(jres1[0]), parseFloat(jres1[1])]).then((jres2) => {
-//             bot.sendMessage(
-//                     msg.chat.id,
-//                     `nilai V yang diprediksi adalah ${jres1[0]} volt`
-//         ); 
-//                 bot.sendMessage(
-//                     msg.chat.id,
-//                     `nilai P yang diprediksi adalah ${jres1[1]} watt`
-//         ); 
+
               cls_model.classify([i, r, v, p]).then((jres2) => {
                 bot.sendMessage(
                     msg.chat.id,
@@ -69,14 +56,11 @@ bot.on('message', (msg) => {
                     msg.chat.id,
                     `klasifikasi Tegangan ${jres2}`
                      
-         );
-        })
+                 );
+            })
         })
     }else{
-       bot.sendMessage(
-        msg.chat.id,
-        `please Click /start`
-       );
+     
     state = 0;
     }
 })
