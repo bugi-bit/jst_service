@@ -32,13 +32,19 @@ bot.onText(/\/predict/, (msg) => {
 bot.on('message', (msg) => {
     if(state == 1){
         s = msg.text.split("|");
+//         i = parseFloat(s[0])
+//         r = parseFloat(s[1])
+        
         model.predict(
         [
+//             i,
+//             r
            parseFloat(s[0]), // string to float
            parseFloat(s[1])
         ]
         ).then((jres1)=>{
-          console.log(jres1);
+//           console.log(jres1);
+            
             
             cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), parseFloat(jres1[0]), parseFloat(jres1[1])]).then((jres2) => {
             bot.sendMessage(
@@ -52,7 +58,7 @@ bot.on('message', (msg) => {
                  bot.sendMessage(
                     msg.chat.id,
                     `klasifikasi Tegangan ${jres2}`
-                     console.log(jres2);
+                     
          );
           state = 0;
         })
