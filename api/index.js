@@ -77,12 +77,12 @@ r.get('/classify/:i/:r', function(req, res, next) {
             [
                 parseFloat(req.params.i), // string to float
                 parseFloat(req.params.r)
-                parseFloat(jres[
-        
-        
-        
-        .then((jres)=>{
-        res.json(jres);
+                parseFloat(jres[0]),
+                parseFloat(jres[1])
+        ]
+        ).then((jres_)=>{
+        res.json({jres, jres_})
+    })
     })
 });
 
