@@ -47,7 +47,6 @@ bot.on('message', (msg) => {
             v = parseFloat(jres1[0])
             p = parseFloat(jres1[1])
             
-          
 //             cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), parseFloat(jres1[0]), parseFloat(jres1[1])]).then((jres2) => {
 //             bot.sendMessage(
 //                     msg.chat.id,
