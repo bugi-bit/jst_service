@@ -76,7 +76,7 @@ r.get('/classify/:i/:r', function(req, res, next) {
         cls_model.classify(
             [
                 parseFloat(req.params.i), // string to float
-                parseFloat(req.params.r)
+                parseFloat(req.params.r),
                 parseFloat(jres[0]),
                 parseFloat(jres[1])
         ]
